@@ -3,21 +3,16 @@
 
 import random
 
-random = random.randint(1,100)
+randomi = random.randint(1,100)
 numero = int
 
-while True :
-    numero != random 
-    numero = int(input("Digite um número aleatório de de 1 a 100:"))
+while True:
+    numero = int(input("Digite um numero de 1 a 100: "))
 
-    if numero <= 0 and numero >= 100 :
-        print("Esse número não é válido")
-        continue
-
-    if numero > random :
-        print("Esse número é maior que o número surpresa")
-    elif numero < random :
-        print("Esse número é menor que o número surpresa")
+    if numero > randomi:
+        print("Esse número é maior que o número randômico")
+    elif numero < randomi:
+        print("Esse número é menor que o número randômico")
     else :
-        print("Esse é o número escolhido")
+        print(f"Esse é o número escolhido, {randomi}")
         break

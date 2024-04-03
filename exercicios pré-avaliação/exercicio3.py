@@ -1,20 +1,20 @@
 # Ex03 - Contador de Vogais e Consoantes: Peça ao usuário para digitar uma frase e retorne o número de vogais e consoantes na frase.
 
-import unicodedata
-import re
+frase = input("Escreva uma frase: ")
 
-vogais = ['a', 'e', 'i', 'o', 'u']
-vogais_quant = 0
+vogais = 0
+consoantes = 0
+outros = 0
 
-frase = unicodedata.normalize('NFKD', input('Digite uma frase: ')).encode('ASCII','ignore').decode('ASCII').lower()
+for i in frase:
+    if i in 'aeiouAEIOU':
+        vogais += 1
+    elif i in '!@#$%¨&*()_+{`^}?:><" }':
+        outros += 1
+    else:
+        consoantes += 1
 
-fraseNegativa = re.sub('[a-z ]', '', frase)
-print(fraseNegativa)
-frase = [i for i in frase if i not in fraseNegativa]
-
-
-for i in vogais:
-    vogais_quant += frase.count(i)
-    
-print(f'VOGAIS: {vogais_quant} \nCONSOANTES: {len(frase) - vogais_quant}')
+print(f"Vogais : {vogais}")
+print(f"consoantes : {consoantes}")
+print(f"outros: {outros}")
 
